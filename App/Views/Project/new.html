@@ -1,0 +1,99 @@
+{% extends "Home/loggedin.html "%}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="http://{{server}}/css/Project/newproject.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://{{server}}/js/pickadate/lib/themes/default.css">
+	<link rel="stylesheet" type="text/css" href="http://{{server}}/js/pickadate/lib/themes/default.date.css">
+	<link rel="stylesheet" type="text/css" href="http://{{server}}/js/pickadate/lib/themes/default.time.css">
+{% endblock %}
+
+{% block body %}
+	
+	<div class='container'>
+		
+		<form action='http://{{server}}/project/create' method='POST' enctype='multipart/form-data'>
+			
+			<div class='proj_img' style='font-size:1.4em; font-family:Tahoma, "sans-serif";text-align:center;padding:75px 0 0 0;box-sizing:border-box;color:rgba(0,0,0,0.3)'>
+				
+			</div>
+
+			<input type="file" name="projectpic" class='image elements'>
+
+			<input type="text" name="projectname" placeholder='Project Name' class='elements text1'>
+
+			<div class='taskcontainer'>
+				<div class='task'>
+					<input type="text" name="task">
+					<p></p>
+				</div>
+				<div class='task'>
+					<input type="text" name="task">
+					<p></p>
+				</div>
+				<div class='task'>
+					<input type="text" name="task">
+					<p></p>
+				</div>
+				<div class='task'>
+					<input type="text" name="task">
+					<p></p>
+				</div>
+				<div class='task'>
+					<input type="text" name="task">
+					<p></p>
+				</div>		
+				<div class='task'>
+					<input type="text" name="task">
+					<p></p>
+				</div>	
+				<div class='task'>
+					<input type="text" name="task">
+					<p></p>
+				</div>	
+				<div class='task'>
+					<input type="text" name="task">
+					<p></p>
+				</div>	
+			</div>
+
+			<p class='select'>
+				Add
+				<select>
+					<option value='1'>1</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5</option>
+				</select>
+				More Tasks
+			</p>
+
+			<div class='due'>				
+				<div class='date'>
+					<p>Date Due</p>
+					<input type="text" name="date_due" class='datepicker elements'>
+				</div>
+				<div class='time'>
+					<p>Time Due</p>
+					<input type="text" name="time_due" class='timepicker elements'>
+				</div>
+			</div>
+
+			<input type="submit" value='Create'>
+
+		</form>
+
+	</div>
+{% endblock %}
+
+{% block js%}
+	<script type="text/javascript" src='http://{{server}}/js/pickadate/lib/picker.js'></script>
+	<script type="text/javascript" src='http://{{server}}/js/pickadate/lib/picker.date.js'></script>
+	<script type="text/javascript" src='http://{{server}}/js/pickadate/lib/picker.time.js'></script>
+	<script type="text/javascript">
+		$('.datepicker').pickadate()
+		$('.timepicker').pickatime()
+	</script>
+	<script type="text/javascript" src='http://{{server}}/js/Project/new.js'></script>
+{% endblock %}

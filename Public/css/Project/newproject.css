@@ -1,0 +1,118 @@
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  left: 0%;
+  width: 80%;
+  min-height: calc(100vh - 72px);
+  background: #fff;
+  padding: 5% 5%;
+}
+.container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container form div.proj_img {
+  width: 25%;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  height: 200px;
+  border-radius: 50%;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.3);
+}
+.container form input[type="file"] {
+  margin: 27px 0 0 60px;
+}
+.container form input[type="text"] {
+  border: none;
+  outline: none;
+  border-bottom: 1px inset black;
+  width: 60%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  margin: 40px 0 0 0;
+}
+.container form div.taskcontainer {
+  margin: 120px 0 0 0;
+  width: 60%;
+  border: none;
+}
+.container form div.taskcontainer div.task {
+  border: none;
+  width: 100%;
+  margin: -119px 0 0 0;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 0.8em;
+  height: 150px;
+}
+.container form div.taskcontainer div.task input[type="text"] {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid #b3b3b3;
+  padding: 0 0 0 40px;
+  box-sizing: border-box;
+}
+.container form div.taskcontainer div.task input[type="text"] + p {
+  position: relative;
+  top: -31px;
+  left: 30px;
+  width: 2px;
+  height: 31px;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  margin: 0;
+}
+.container form p.select {
+  position: relative;
+  top: -70px;
+  font-family: Tahoma, "sans-serif";
+}
+.container form div.due {
+  margin: -70px 0 0 0;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.container form div.due div.date, .container form div.due div.time {
+  width: 47.5%;
+  margin: 0 2.5% 0 0;
+}
+.container form div.due div.date p, .container form div.due div.time p {
+  font-size: 1.3em;
+  font-family: Tahoma, "sans-serif";
+  color: rgba(0, 0, 0, 0.7);
+}
+.container form div.due div.time {
+  margin: 0 0 0 2.5%;
+}
+.container form div.due input.datepicker, .container form div.due input.timepicker {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 5px 7px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  margin: -12px 0 0 0;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+.container form input[type="submit"] {
+  margin: 40px 0 0 0;
+  border: none;
+  outline: none;
+  background: rgba(204, 132, 0, 0.7);
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.2em;
+  font-family: Tahoma, "sans-serif";
+  cursor: pointer;
+}

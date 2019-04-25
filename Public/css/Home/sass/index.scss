@@ -1,0 +1,472 @@
+
+
+@mixin flexmixin()
+{
+	display: -webkit-box;  
+ 	display: -ms-flexbox; 
+ 	display: -moz-box;  
+  	display: -webkit-flex; 
+	display:flex;
+}
+
+body
+{
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+}
+
+$marktotalwidth:160px;
+$marktotalheight:250px;
+$boxwidth:40px;
+$markwidth:3px;
+$markheight:20px;
+
+
+// CONTAINER FOR THE LANDING PAGE ANIMATION
+.container
+{
+	position:absolute;
+	top:0;
+	left:0;
+	background:linear-gradient(rgba(dodgerblue, 0.8), #fff);
+	background-repeat:no-repeat;
+	background-size:cover;
+	width:100vw;
+	height:100vh;
+	display:none;
+
+	.markbody
+	{
+		position:relative;
+		top:calc((100vh - 250px)/2);
+		left:calc((100vw - 160px)/2);
+		width:$marktotalwidth;
+		height:$marktotalheight;
+		border:2px solid rgba(#000, 0.5);
+		background:#fff;
+		box-sizing:border-box;
+		margin:-($marktotalwidth/5) 0 0 0;
+		padding:30px 0;
+
+		.box1
+		{
+			position:relative;
+			left:calc((100% - 40px)/2);
+			width:$boxwidth;
+			height:$boxwidth;
+			border:1px solid rgba(#000, 0.5);
+			margin:0 0 30px 0;
+
+			.mark1
+			{
+				position:absolute;
+				top:30%;
+				left:25%;
+				width:$markwidth;
+				background:darken(#32CD32, 10%);
+				transform:rotate(-45deg);
+				animation:animatetick1 1s both 1 0.5s ease-in;
+			}
+
+			.mark2
+			{
+				position:absolute;
+				bottom:15%;
+				right:14%;
+				width:$markwidth;
+				background:darken(#32CD32, 10%);
+				transform:rotate(45deg);				
+				animation:animatetick2 1s both 1 1.5s ease-in;
+			}
+		}
+
+		.box2
+		{
+			@extend .box1;
+
+			.mark1
+			{
+				animation:animatetick1 1s both 1 3s ease-in;
+			}
+
+			.mark2
+			{
+				animation:animatetick2 1s both 1 4s ease-in;
+			}
+		}
+
+		.box3
+		{
+			@extend .box1;
+
+			.wrong
+			{
+				position:absolute;
+				top:15%;
+				left:45%;
+			}
+
+			.wrong:before
+			{
+				display:block;
+				content:'';
+				width:3px;
+				background:red;
+				height:$markheight + 10px;
+				transform:rotate(45deg);				
+				animation:animatex 1s both 1 5s ease-in;
+			}
+
+			.wrong:after
+			{
+				@extend .wrong:before;
+				margin:-31px 0 0 0;
+				transform:rotate(-45deg);				
+				animation:animatex 1s both 1 6s ease-in;
+			}
+
+			.box
+			{
+				position:relative;
+				width:10px;
+				height:10px;
+				bakcground:yellow;
+			}
+		}
+	}
+}
+
+
+//CONTAINER CONTAINING HOME PAGE INFORMATION
+
+$logowidth:50px;
+
+.container2
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+	display:block;
+	background:url('http://localhost/Images/Home/stardust.png');
+
+	.mainInfo
+	{
+		position:absolute;
+		top:27%;
+		left:15%;
+		width:40%;
+		@include flexmixin();
+		flex-flow:column;
+		height:30%;
+
+		.logocontent
+		{
+			position:relative;
+			animation:animlogocontent 2s both 1 1s ease-out;
+			@include flexmixin();
+			.logo
+			{
+				width:$logowidth;
+				height:$logowidth;
+				border:5px solid orange;
+				margin:0 10px 0 0;
+			}
+
+			.nameBrand
+			{
+				position:relative;
+				top:-20px;
+				color:rgba(#000, 0.7);
+				font-family: 'Kosugi', sans-serif;
+				font-size:2em;
+				color:#fff;
+			}
+		}
+
+		span
+		{
+			position:relative;
+			margin:-10px 0 0 0;
+			border-bottom:0.5px solid #fff;
+			width:80%;			
+			animation:animspan 2s both 1 1s ease-out;
+		}
+		
+		.quote
+		{
+			position:relative;
+			font-family: 'Montserrat', sans-serif;
+			width:85%;
+			color:#fff;
+			animation:animquote 2s both 1 1s ease-out;
+		}
+
+		.newquote
+		{
+			@extend .quote;
+			animation:none;
+			display:none;
+		}
+
+		.quoter
+		{
+			position:relative;
+			width:35%;
+			left:60%;
+			font-family: 'Montserrat', sans-serif;
+			color:#fff;
+			animation:animquote 2s both 1 1s ease-out;
+		}
+
+		.newquoter
+		{
+			@extend .quoter;
+			animation:none;
+			display:none;
+		}
+	}
+
+	.alert-danger
+	{
+		position:absolute;
+		top:18%;
+		left:60%;
+		width:22%;
+		background:lighten(red, 25%);;
+		color:lighten(#000, 20%);
+		text-align:center;
+		padding:10px 0;
+		font-family:"Franklin Gothic", "sans-serif";
+		font-size:1em;
+		display:none;
+		color:#fff;
+	}
+
+	.alert-success
+	{
+		@extend .alert-danger;
+		background:#B2D9B2;
+	}
+
+	.signupform
+	{
+		position:absolute;
+		top:27%;
+		left:60%;
+		height:55%;
+		width:22%;
+		background:#fff;	
+		animation:animsignup 2s both 1 1s linear;
+		padding:40px 0;
+		box-sizing:border-box;
+		border-radius:5px;
+
+		form
+		{
+			position:relative;
+			left:6%;
+			width:88%;
+
+			input[type="text"]
+			{
+				width:45%;
+				border:none;
+				border-bottom:1px solid rgba(#000,0.3);
+				padding:0 0 0 2px;
+				box-sizing:border-box;
+				font-size:0.8em;
+				font-family:'Trebuchet MS', "sans-serif";
+
+				&:focus
+				{				
+					border-bottom:1px solid dodgerblue;
+				}
+			}
+
+			input[type="text"]:nth-child(1)
+			{
+				margin:0 6% 20% 0;
+			}
+
+			input[type="email"]
+			{
+				@extend input[type="text"];
+				outline:none;
+				width:100%;
+				margin:0 0 20% 0;
+			}
+
+			input[type="email"] + input[type="text"]
+			{
+				width:100%;
+				margin:0 0 5% 0;
+			}
+
+			input[type='password']
+			{
+				@extend input[type="email"];
+				margin:0 0 5% 0;
+			}
+
+			input[type='checkbox']
+			{
+				position:relative;
+				top:7px;
+			}
+
+			label
+			{
+				position:relative;
+				top:6px;
+				left:-3px;
+				font-family:Tahoma, sans-serif;
+				font-size:0.8em;
+				color:lighten(#000, 50%);
+			}
+
+			input[type="submit"]
+			{
+				position:relative;
+				top:50px;
+				width:50%;
+				left:-20%;
+				background:lighten(orange, 19%);
+				color:#fff;
+				border-radius:4px;
+				outline:none;
+				padding:3px 0;
+				font-family:Tahoma, sans-serif;
+				box-shadow: 0 2px 4px #888888;
+				cursor:pointer;
+			}
+
+			p
+			{
+				position:relative;
+				top:50px;
+				left:15%;
+				color:lighten(#000, 50%);				
+				font-family:Tahoma, sans-serif;
+				font-size:0.8em;
+				width:70%;
+
+				a
+				{
+					text-decoration:none;
+					color:lighten(orange, 20%);
+				}
+			}
+		}
+	}
+}
+
+
+//ANIMATIONS FOR THE LANDING PAGE
+
+@keyframes animatetick1
+{
+	from
+	{
+		height:0;
+	}
+
+	to
+	{
+		height:$markheight;
+	}
+}
+
+@keyframes animatetick2
+{
+	from
+	{
+		height:0;
+	}
+
+	to
+	{
+		height:$markheight + 21px;
+	}
+}
+
+@keyframes animatex
+{
+	from
+	{
+		height:0;
+	}
+
+	to
+	{
+		height:$markheight + 10px;
+	}
+}
+
+// ANIMATIONS FOR THE SIGNUP HOME PAGE
+
+@keyframes animlogocontent
+{
+	from
+	{
+		left:-100px;
+	}
+
+	to
+	{
+		left:0;
+	}
+}
+
+@keyframes animspan
+{
+	from
+	{
+		left:-100px;
+		opacity:0;
+	}
+
+	to
+	{
+		left:0;
+		opacity:1;
+	}
+}
+
+@keyframes animquote
+{
+	from
+	{
+		top:100px;
+	}
+	to
+	{
+		top:0;
+	}
+}
+
+@keyframes animsignup
+{
+	0%
+	{
+		top:calc(27% - 50px);
+	}
+
+	60%
+	{
+		top:calc(27% + 5px);
+	}
+
+	80%
+	{
+		top:calc(27% - 5px);
+	}
+
+	100%
+	{
+		top:27%;
+	}
+}
+

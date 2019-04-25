@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("http://localhost/Images/Home/stardust.png");
+}
+
+.divbody {
+  position: absolute;
+  top: calc((100vh - 300px)/2);
+  left: calc((100vw - 400px)/2);
+  width: 400px;
+  height: 150px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 30px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.divbody div:nth-child(1n) i {
+  font-size: 6em;
+  margin: 0 30px 0 0;
+}
+.divbody div:nth-child(2n) {
+  margin: 20px 0 0 0;
+  font-size: 1.4em;
+  font-family: 'Poiret One', cursive;
+}
+.divbody div:nth-child(2n) a {
+  text-decoration: none;
+  color: darkblue;
+}

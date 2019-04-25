@@ -1,0 +1,53 @@
+{% extends 'Home/loggedin.html' %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="http://{{server}}/css/Profile/view.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet"> 
+{% endblock %}
+
+
+{% block body %}
+
+	<div class='profileBody'>
+		
+		<div class='imgBody'>
+			
+			<div class='img' style='background:url(http://{{server}}/{{user.image}}); background-size:cover'>
+				
+			</div>
+			<p hidden>{{user.hasImage}}</p>
+
+			<input type="file" name="profileimg">
+		</div>
+
+		<div class='infoBody'>
+
+			<span hidden>{{user.numprojects}}</span>
+			<span hidden>{{user.numcprojects}}</span>
+			<span hidden>{{user.numtasks}}</span>
+			<span hidden>{{user.numctasks}}</span>
+			
+			<p class='name'>{{user.fname}} {{user.lname}}</p>
+
+			<p class='project'>Current Project Completion</p>
+
+			<div class='percenttotal'></div>
+			<div class='percent proj_percent'></div>
+
+			<p class='task'>Current Task Completion</p>
+
+			<div class='percenttotal'></div>
+			<div class='percent task_percent'></div>
+
+			<button class='picture' hidden>Save</button>
+		</div>
+	</div>
+
+{% endblock %}
+
+
+{% block js%}
+	
+	<script type="text/javascript" src='http://{{server}}/js/Profile/view.js'></script>
+{% endblock %}

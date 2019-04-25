@@ -1,0 +1,22 @@
+
+<div style="margin:5% 15% 0 15%; font-family:Trebuchet MS,'sans-serif'; padding:50px 50px 20px 50px; box-sizing: border-box; width:70%; background:rgba(0,0,0,0.02);">
+	
+	<h1 style='color:orange;'>Checklist</h1>
+	<hr style='color:rgba(0,0,0,0.3)'/>
+
+	<div style='line-height:2; font-size:1.1em; color:rgba(0,0,0,0.7)'>
+		Hello {{name}}, this is a list of your current projects outlining what remains to be done, along
+		with their expiry times
+
+		<ul>
+			
+			{% for project in projects %}
+				<li>{{ project.name }}</li>
+				<p>{{ project.numcompletedtasks}} Completed Tasks</p>
+				<p>{{ project.uncompletedtasks}} Uncompleted Tasks</p>
+				<p>Expires {{ project.date_due }} at {{ project.time_due }}</p>
+			{% endfor %}
+
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Checklist | Login</title>
+		<link rel="stylesheet" type="text/css" href="http://{{server}}/css/Login/index.css">
+	</head>
+	<body>
+
+		{% if flash_notifs is not empty %}
+
+			{% for notif in flash_notifs %}
+			
+				<div class='alert alert-{{notif.type}}'>
+					{{notif.message}}
+				</div>
+			{% endfor %}
+
+		{% endif %}
+
+		<div id='login_cont'>
+
+			<form action='http://{{server}}/login/create' method='POST'>
+				<input type="text" name="email" class='elements' value='{{user.email}}' placeholder='Email Address'>
+
+				<input type="password" name="password" class='elements' placeholder='Password'>
+
+				<p>
+					<input type="checkbox" name="rememberme"> Remember Me
+				</p>
+
+				<input type="submit" value='Login'>
+
+				<p class='forgotp'><a href="http://{{server}}/account/forgotpassword">Forgot Password?</a></p>
+
+				<p class='signup'>New to Checklist?,  <a href="http://{{server}}">Sign up</a></p>
+			</form>
+		</div>
+
+		<script type="text/javascript" src='http://{{server}}/js/jquery-3.2.1.min.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/Login/index.js'></script>
+	</body>
+</html>

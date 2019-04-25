@@ -1,0 +1,107 @@
+@mixin flexmixin()
+{
+	display: -webkit-box;  
+ 	display: -ms-flexbox; 
+ 	display: -moz-box;  
+  	display: -webkit-flex; 
+	display:flex;
+}
+
+body
+{
+	margin:0;
+	padding:0;
+}
+
+#mainBody
+{
+	margin:3% 0 0 5%;
+	padding:2% 0 0 3%;
+	.profileBody
+	{
+		width:80%;
+		height:80%;
+		background:rgba(0,0,0,0.02);
+		border-radius:5px;
+		@include flexmixin();
+
+		.imgBody
+		{
+			width:30%;
+			margin:5% 0 0 5%;
+			@include flexmixin();
+			flex-direction:column;
+
+			.img
+			{
+				width:100%;
+				height:70%;
+			}
+
+			input[type="file"]
+			{
+				margin:10% 0 0 15%;
+				outline:none;
+				border:none;
+				background:none;
+				padding:10px;
+			}
+		}
+
+		.infoBody
+		{
+			margin:7% 0 0 5%;
+			padding:1%;
+			width:55%;
+
+			p.name
+			{
+				font-family: 'Merriweather', serif;
+				font-size:1.4em;
+			}
+
+			p.project
+			{
+				font-family: 'Nanum Gothic', sans-serif;
+				font-size:1.1em;
+			}
+
+			div.percenttotal
+			{
+				width:70%;
+				height:15px;
+				border-radius:2px;
+				background:#DC143C;
+			}
+
+			div.percent
+			{
+				@extend div.percenttotal;
+				background:#198D19;
+				position:relative;
+				top:-15px;
+				width:0;
+				transition:1s width ease-in-out;
+			}
+
+			p.task
+			{
+				@extend p.project;
+			}
+
+			button
+			{
+				position:relative;
+				top:20px;
+				left:55%;
+				background:#50C878;
+				border:1px solid #669966;
+				outline:none;
+				color:#fff;
+				padding:10px 15px;
+				border-radius:5px;
+				cursor:pointer;
+			}
+		}
+	}
+}

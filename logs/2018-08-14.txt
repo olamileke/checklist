@@ -1,0 +1,12 @@
+[14-Aug-2018 02:20:30 Europe/Berlin] <h2>Fatal Error</h2><p>Uncaught Exception</p><p>Message:App\Controllers\Homez controller not found</p><p>Stack Trace:#0 C:\xampp\htdocs\PHP\Checklist\Public\index.php(24): Core\Router->dispatch('homez/inde')
+#1 {main}</p><p>Found in C:\xampp\htdocs\PHP\Checklist\Core\Router.php on line 70</p>
+[14-Aug-2018 02:20:31 Europe/Berlin] <h2>Fatal Error</h2><p>Uncaught Exception</p><p>Message:App\Controllers\Homez controller not found</p><p>Stack Trace:#0 C:\xampp\htdocs\PHP\Checklist\Public\index.php(24): Core\Router->dispatch('homez/inde')
+#1 {main}</p><p>Found in C:\xampp\htdocs\PHP\Checklist\Core\Router.php on line 70</p>
+[14-Aug-2018 02:20:31 Europe/Berlin] <h2>Fatal Error</h2><p>Uncaught Exception</p><p>Message:App\Controllers\Homez controller not found</p><p>Stack Trace:#0 C:\xampp\htdocs\PHP\Checklist\Public\index.php(24): Core\Router->dispatch('homez/inde')
+#1 {main}</p><p>Found in C:\xampp\htdocs\PHP\Checklist\Core\Router.php on line 70</p>
+[14-Aug-2018 02:21:22 Europe/Berlin] <h2>Fatal Error</h2><p>Uncaught Exception</p><p>Message:App\Controllers\Homez controller not found</p><p>Stack Trace:#0 C:\xampp\htdocs\PHP\Checklist\Public\index.php(24): Core\Router->dispatch('homez/inde')
+#1 {main}</p><p>Found in C:\xampp\htdocs\PHP\Checklist\Core\Router.php on line 70</p>
+[14-Aug-2018 02:21:29 Europe/Berlin] <h2>Fatal Error</h2><p>Uncaught Exception</p><p>Message:App\Controllers\Homez controller not found</p><p>Stack Trace:#0 C:\xampp\htdocs\PHP\Checklist\Public\index.php(24): Core\Router->dispatch('homez/inde')
+#1 {main}</p><p>Found in C:\xampp\htdocs\PHP\Checklist\Core\Router.php on line 70</p>
+[14-Aug-2018 02:21:30 Europe/Berlin] <h2>Fatal Error</h2><p>Uncaught Exception</p><p>Message:App\Controllers\Homez controller not found</p><p>Stack Trace:#0 C:\xampp\htdocs\PHP\Checklist\Public\index.php(24): Core\Router->dispatch('homez/inde')
+#1 {main}</p><p>Found in C:\xampp\htdocs\PHP\Checklist\Core\Router.php on line 70</p>

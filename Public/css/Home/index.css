@@ -1,0 +1,327 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(30, 144, 255, 0.8), #fff);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+.container .markbody {
+  position: relative;
+  top: calc((100vh - 250px)/2);
+  left: calc((100vw - 160px)/2);
+  width: 160px;
+  height: 250px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background: #fff;
+  box-sizing: border-box;
+  margin: -32px 0 0 0;
+  padding: 30px 0;
+}
+.container .markbody .box1, .container .markbody .box2, .container .markbody .box3 {
+  position: relative;
+  left: calc((100% - 40px)/2);
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin: 0 0 30px 0;
+}
+.container .markbody .box1 .mark1, .container .markbody .box2 .mark1, .container .markbody .box3 .mark1 {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  width: 3px;
+  background: #28a428;
+  transform: rotate(-45deg);
+  animation: animatetick1 1s both 1 0.5s ease-in;
+}
+.container .markbody .box1 .mark2, .container .markbody .box2 .mark2, .container .markbody .box3 .mark2 {
+  position: absolute;
+  bottom: 15%;
+  right: 14%;
+  width: 3px;
+  background: #28a428;
+  transform: rotate(45deg);
+  animation: animatetick2 1s both 1 1.5s ease-in;
+}
+.container .markbody .box2 .mark1 {
+  animation: animatetick1 1s both 1 3s ease-in;
+}
+.container .markbody .box2 .mark2 {
+  animation: animatetick2 1s both 1 4s ease-in;
+}
+.container .markbody .box3 .wrong {
+  position: absolute;
+  top: 15%;
+  left: 45%;
+}
+.container .markbody .box3 .wrong:before, .container .markbody .box3 .wrong:after {
+  display: block;
+  content: '';
+  width: 3px;
+  background: red;
+  height: 30px;
+  transform: rotate(45deg);
+  animation: animatex 1s both 1 5s ease-in;
+}
+.container .markbody .box3 .wrong:after {
+  margin: -31px 0 0 0;
+  transform: rotate(-45deg);
+  animation: animatex 1s both 1 6s ease-in;
+}
+.container .markbody .box3 .box {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  bakcground: yellow;
+}
+
+.container2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: url("http://localhost/Images/Home/stardust.png");
+}
+.container2 .mainInfo {
+  position: absolute;
+  top: 27%;
+  left: 15%;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column;
+  height: 30%;
+}
+.container2 .mainInfo .logocontent {
+  position: relative;
+  animation: animlogocontent 2s both 1 1s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.container2 .mainInfo .logocontent .logo {
+  width: 50px;
+  height: 50px;
+  border: 5px solid orange;
+  margin: 0 10px 0 0;
+}
+.container2 .mainInfo .logocontent .nameBrand {
+  position: relative;
+  top: -20px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'Kosugi', sans-serif;
+  font-size: 2em;
+  color: #fff;
+}
+.container2 .mainInfo span {
+  position: relative;
+  margin: -10px 0 0 0;
+  border-bottom: 0.5px solid #fff;
+  width: 80%;
+  animation: animspan 2s both 1 1s ease-out;
+}
+.container2 .mainInfo .quote, .container2 .mainInfo .newquote {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  width: 85%;
+  color: #fff;
+  animation: animquote 2s both 1 1s ease-out;
+}
+.container2 .mainInfo .newquote {
+  animation: none;
+  display: none;
+}
+.container2 .mainInfo .quoter, .container2 .mainInfo .newquoter {
+  position: relative;
+  width: 35%;
+  left: 60%;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  animation: animquote 2s both 1 1s ease-out;
+}
+.container2 .mainInfo .newquoter {
+  animation: none;
+  display: none;
+}
+.container2 .alert-danger, .container2 .alert-success {
+  position: absolute;
+  top: 18%;
+  left: 60%;
+  width: 22%;
+  background: #ff8080;
+  color: #333333;
+  text-align: center;
+  padding: 10px 0;
+  font-family: "Franklin Gothic", "sans-serif";
+  font-size: 1em;
+  display: none;
+  color: #fff;
+}
+.container2 .alert-success {
+  background: #B2D9B2;
+}
+.container2 .signupform {
+  position: absolute;
+  top: 27%;
+  left: 60%;
+  height: 55%;
+  width: 22%;
+  background: #fff;
+  animation: animsignup 2s both 1 1s linear;
+  padding: 40px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.container2 .signupform form {
+  position: relative;
+  left: 6%;
+  width: 88%;
+}
+.container2 .signupform form input[type="text"], .container2 .signupform form input[type="email"], .container2 .signupform form input[type='password'] {
+  width: 45%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0 0 0 2px;
+  box-sizing: border-box;
+  font-size: 0.8em;
+  font-family: 'Trebuchet MS', "sans-serif";
+}
+.container2 .signupform form input[type="text"]:focus, .container2 .signupform form input[type="email"]:focus, .container2 .signupform form input[type='password']:focus {
+  border-bottom: 1px solid dodgerblue;
+}
+.container2 .signupform form input[type="text"]:nth-child(1), .container2 .signupform form input[type="email"]:nth-child(1), .container2 .signupform form input[type='password']:nth-child(1) {
+  margin: 0 6% 20% 0;
+}
+.container2 .signupform form input[type="email"], .container2 .signupform form input[type='password'] {
+  outline: none;
+  width: 100%;
+  margin: 0 0 20% 0;
+}
+.container2 .signupform form input[type="email"] + input[type="text"], .container2 .signupform form input[type='password'] + input[type="text"], .container2 .signupform form input[type="email"] + input[type="email"], .container2 .signupform form input[type='password'] + input[type="email"], .container2 .signupform form input[type="email"] + input[type='password'], .container2 .signupform form input[type='password'] + input[type='password'] {
+  width: 100%;
+  margin: 0 0 5% 0;
+}
+.container2 .signupform form input[type='password'] {
+  margin: 0 0 5% 0;
+}
+.container2 .signupform form input[type='checkbox'] {
+  position: relative;
+  top: 7px;
+}
+.container2 .signupform form label {
+  position: relative;
+  top: 6px;
+  left: -3px;
+  font-family: Tahoma, sans-serif;
+  font-size: 0.8em;
+  color: gray;
+}
+.container2 .signupform form input[type="submit"] {
+  position: relative;
+  top: 50px;
+  width: 50%;
+  left: -20%;
+  background: #ffc761;
+  color: #fff;
+  border-radius: 4px;
+  outline: none;
+  padding: 3px 0;
+  font-family: Tahoma, sans-serif;
+  box-shadow: 0 2px 4px #888888;
+  cursor: pointer;
+}
+.container2 .signupform form p {
+  position: relative;
+  top: 50px;
+  left: 15%;
+  color: gray;
+  font-family: Tahoma, sans-serif;
+  font-size: 0.8em;
+  width: 70%;
+}
+.container2 .signupform form p a {
+  text-decoration: none;
+  color: #ffc966;
+}
+
+@keyframes animatetick1 {
+  from {
+    height: 0;
+  }
+  to {
+    height: 20px;
+  }
+}
+@keyframes animatetick2 {
+  from {
+    height: 0;
+  }
+  to {
+    height: 41px;
+  }
+}
+@keyframes animatex {
+  from {
+    height: 0;
+  }
+  to {
+    height: 30px;
+  }
+}
+@keyframes animlogocontent {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes animspan {
+  from {
+    left: -100px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes animquote {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes animsignup {
+  0% {
+    top: calc(27% - 50px);
+  }
+  60% {
+    top: calc(27% + 5px);
+  }
+  80% {
+    top: calc(27% - 5px);
+  }
+  100% {
+    top: 27%;
+  }
+}

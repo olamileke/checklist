@@ -1,0 +1,25 @@
+<a href="http://{{server}}/project/{{project.id}}/{{project.url}}">
+	<div class='task'>
+		<span hidden>{{project.id}}</span>
+		<div class='taskimg' style='background:url(http://{{server}}/{{project.image}}); background-size:cover'></div>
+		<p class='name'>{{project.name}}</p>
+		<div class='cont'>
+
+			{% if settings.values_in_percentage %}
+				<p class='over'>{{project.percent}}</p>
+			{% else %}
+				<p class='over'>{{project.numcompletedtasks}}/{{project.numtasks}}</p>
+			{% endif %}
+			
+			{% if project.is_completed %}
+				<p class='complete'>Completed</p>
+			{% elseif project.is_expired %}
+				<p class='expired'>Expired</p>
+			{% else %}
+				<p class='timer'></p>
+			{% endif %}
+		</div>
+		<div class='totalpercent'></div>
+		<div class='percent'></div>
+	</div>
+</a>

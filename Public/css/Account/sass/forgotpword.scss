@@ -1,0 +1,126 @@
+
+@mixin flexmixin()
+{
+	display: -webkit-box;  
+ 	display: -ms-flexbox; 
+ 	display: -moz-box;  
+  	display: -webkit-flex; 
+	display:flex;
+}
+
+
+body
+{
+	margin:0;
+	padding:0;
+	background:url('http://localhost/Images/Login/concrete.png');
+	width:100vw;
+	height:100vh;
+
+	@include flexmixin;
+	flex-flow:column;
+	align-items:center;
+	justify-content: center;
+}
+
+.alert
+{
+	position:relative;
+	top:-65px;
+	border:1px solid black;
+	padding:9px;
+	color:#fff;
+	width:400px;
+	text-align:center;
+	font-family:"Trebuchet MS","sans-serif";
+	border-radius:3px;
+	border-radius:5px;
+}
+
+
+$backcolor_d:#F08080;
+
+$backcolor_s:darken(rgb(178, 217, 178), 15%);
+
+@mixin setColors($color)
+{
+	background:$color;
+	border:1px solid $color;
+}
+
+.alert-danger
+{
+	@include setColors($backcolor_d);
+}
+
+.alert-success
+{
+	@include setColors($backcolor_s)
+}
+
+$percentwidth:round(percentage(300px/400px));
+$var:10px;
+
+.container
+{
+	position:relative;
+	top:-40px;
+	width:400px;
+	background:rgba(#000, 0.4);
+	@include flexmixin;
+	flex-flow:column;
+	align-items:center;
+	padding:30px 0px;
+
+	h3
+	{
+		font-family:"Trebuchet MS", "sans-serif";
+		color:#fff;
+	}
+
+	hr
+	{
+		color:#fff;
+		width:80%;
+		margin-top:-10px;
+	}
+
+	p
+	{
+		color:#fff;
+		width:80%;
+		text-align: center;
+		font-family:Helvetica, "sans-serif"
+	}
+
+	form
+	{
+		width:$percentwidth;
+		margin-top:$var;
+		input[type="email"], input[type="password"]
+		{
+			border:1px solid rgba(#262626, 0.3);
+			margin:0 0 13px 0;
+			box-sizing:border-box;
+			font-size:0.9em;
+			padding:9px 5px 9px 13px;
+			border-radius:10px;
+			border-box:box-sizing;
+			width:100%;
+		}
+
+		input[type="submit"]
+		{
+			background:#6253BE;
+			color:#fff;
+			outline:none;
+			padding:9px 0;
+			border:none;
+			border-radius:2px;
+			cursor:pointer;
+			width:100%;
+		}
+	}
+}
+
+

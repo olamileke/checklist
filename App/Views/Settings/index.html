@@ -1,0 +1,46 @@
+{% extends 'Home/loggedin.html' %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="http://{{server}}/css/settings/settings.css">	
+{% endblock %}
+
+{% block body %}
+
+	<div class='settingsbody'>
+		
+		<div class='setting'>
+			<p>Receive values in Percentage</p>
+
+			{% if user.settings.values_in_percentage %}
+				<div class='switch switchOn'></div>
+			{% else %}
+				<div class='switch'></div>
+			{% endif %}
+			<span hidden>1</span>
+		</div>
+		<div class='setting'>
+			<p>Get weekly roundup reports on your projects</p>
+			{% if user.settings.get_weekly_roundup %}
+				<div class='switch switchOn'></div>
+			{% else %}
+				<div class='switch'></div>
+			{% endif %}
+			<span hidden>2</span>
+		</div>
+		<div class='setting'>
+			<p>Receive reminders day before Projects expire</p>
+			{% if user.settings.get_reminder %}
+				<div class='switch switchOn'></div>
+			{% else %}
+				<div class='switch'></div>
+			{% endif %}
+			<span hidden>3</span>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block js %}
+
+	<script type="text/javascript" src='http://{{server}}/js/Settings/index.js'></script>
+{% endblock %}

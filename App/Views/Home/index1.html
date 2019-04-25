@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Checklist</title>
+
+		<link rel="apple-touch-icon" sizes="57x57" href="http://{{server}}/Images/Favicons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="http://{{server}}/Images/Favicons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="http://{{server}}/Images/Favicons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="http://{{server}}/Images/Favicons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="http://{{server}}/Images/Favicons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="http://{{server}}/Images/Favicons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="http://{{server}}/Images/Favicons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="http://{{server}}/Images/Favicons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="http://{{server}}/Images/Favicons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="http://{{server}}/Images/Favicons//android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="http://{{server}}/Images/Favicons//favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="http://{{server}}/Images/Favicons//favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="http://{{server}}/Images/Favicons//favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<link href="https://fonts.googleapis.com/css?family=Kosugi" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 		
+		<link rel="stylesheet" type="text/css" href="http://{{server}}/css/Home/index.css">
+	</head>
+	<body>
+		
+		<div class='container'>
+			<div class='markbody'>
+				<div class='box1'>
+					<span class='mark1'></span>
+					<span class='mark2'></span>
+				</div>	
+				<div class='box2'>
+					<span class='mark1'></span>
+					<span class='mark2'></span>
+				</div>	
+				<div class='box3'>
+					<span class='wrong'></span>
+				</div>
+			</div>
+		</div>
+
+		<div class='container2'>
+			
+			<div class='mainInfo'>
+				<div class='logocontent'>
+					<div class='logo'></div>
+					<p class='nameBrand'>CheckList</p>
+				</div>
+
+				<span></span>
+
+				<p class='quote'>
+					"The purpose of life is not to be happy- but to matter, to be productive, to be useful, to have it make some 
+					difference that you lived at all"
+				</p>
+				<p class='quoter'>
+					- Leo Rosten
+				</p>
+			</div>
+
+
+			{% if flash_notifs is not empty %}
+				{% for notif in flash_notifs %}
+					<div class='alert alert-{{notif.type}}'>
+						{{notif.message}} 
+					</div>
+				{% endfor %}
+			{% endif %}
+
+			<div class='signupform'>
+				<form  action='http://{{server}}/signup/create' method='POST'>
+					<input type="text" name="fname" value='{{user.fname}}' class='elements' placeholder='First Name' autofocus>
+					<input type="text" name="lname" value='{{user.lname}}' class='elements' placeholder='Last Name'>
+					<input type="email" name="email" value='{{user.email}}' class='elements' placeholder='Email Address'>
+					<input type="password" name="password" class='elements' placeholder='Password'>
+
+					<input type="checkbox" name="togglepassword">
+					<label>Show Password</label>
+
+					<input type="submit" value='Signup'>
+
+					<p>Already have an account? <a href="http://{{server}}/login">Login</a></p>
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript" src='http://{{server}}/js/jquery-3.2.1.min.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/Home/index.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/Home/validate.js'></script>
+	</body>
+</html>

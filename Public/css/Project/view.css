@@ -1,0 +1,130 @@
+#mainBody {
+  padding: 0 0 10px 0;
+  margin-bottom: 15px;
+}
+#mainBody .info {
+  margin: -10px 0 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+  width: calc(100% - 40px);
+}
+#mainBody .info .name {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.6em;
+}
+#mainBody .info .timer {
+  position: absolute;
+  top: 31px;
+  left: 40px;
+  font-size: 1.6em;
+  margin: 20px 0;
+  color: #666666;
+  font-family: 'Thasadith', sans-serif;
+}
+#mainBody .info button.complete {
+  position: absolute;
+  margin-top: 3%;
+  left: 74%;
+  background: #71e294;
+  border: 1px solid #75a375;
+  height: 44px;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0px 25px;
+  cursor: pointer;
+}
+#mainBody .info p.status, #mainBody .info p.expired {
+  position: absolute;
+  margin-top: 3%;
+  left: 74%;
+  font-family: "Tahoma",'sans-serif';
+  font-size: 1.6em;
+  color: #71e294;
+}
+#mainBody .info p.expired {
+  color: red;
+  font-family: 'Raleway', sans-serif;
+}
+#mainBody .picinfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+  margin: 10px 0 0 0;
+}
+#mainBody .picinfo .picturediv {
+  width: 63%;
+  height: 250px;
+  margin: -15px 7% 0 40px;
+  background-position: 0% 20%;
+}
+#mainBody .picinfo p {
+  position: relative;
+  top: -70px;
+  font-size: 7em;
+  font-family: Tahoma, "sans-serif";
+  color: rgba(0, 0, 0, 0.7);
+}
+#mainBody .taskcontainer {
+  position: relative;
+  top: -110px;
+  margin: 0px 0 0 40px;
+}
+#mainBody .taskcontainer .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  margin: 15px 0 0 0;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 1.2em;
+}
+#mainBody .taskcontainer .task .checkbox {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #C3734D;
+  box-sizing: border-box;
+  margin: 0 10px 0 0;
+  cursor: pointer;
+}
+#mainBody .taskcontainer .task .l_check, #mainBody .taskcontainer .task .s_check {
+  position: relative;
+  top: -4px;
+  left: -1.7%;
+  transform: rotate(45deg);
+  width: 3px;
+  height: 40px;
+  background: #C3734D;
+}
+#mainBody .taskcontainer .task .l_check .visible, #mainBody .taskcontainer .task .s_check .visible {
+  display: block;
+}
+#mainBody .taskcontainer .task .s_check {
+  top: 14px;
+  left: -4%;
+  height: 20px;
+  transform: rotate(-45deg);
+}
+#mainBody .taskcontainer .task p {
+  margin-top: 10px;
+  margin-left: 14px;
+}
+#mainBody button.update {
+  position: relative;
+  top: -9%;
+  left: 58%;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  background: #50C878;
+  border: 1px solid #669966;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}

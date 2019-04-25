@@ -1,0 +1,97 @@
+
+
+@mixin flexmixin()
+{
+	display: -webkit-box;  
+ 	display: -ms-flexbox; 
+ 	display: -moz-box;  
+  	display: -webkit-flex; 
+	display:flex;
+}
+
+$mval:50px;
+$settingswidth:700px;
+
+@function returnswitchvalue($val)
+{
+	@return 0.75 * $val;
+}
+
+.settingsbody
+{
+	position:relative;
+	top:100px;
+	left:200px;
+	width:$settingswidth;
+	height:200px;
+
+
+	.setting
+	{
+		width:100%;
+		margin-bottom:$mval;
+		@include flexmixin();
+
+		p
+		{
+			font-family:'Thasadith', sans-serif;
+			font-size:1.3em;
+			width:60%;
+			color:rgba(#000, 0.8);
+		}
+
+		.switch
+		{
+			width:returnswitchvalue(100px);
+			height:returnswitchvalue(50px);
+			background:rgba(#000, 0.2);
+			z-index:0;
+			margin:0;
+			padding:0;
+			appearance:none;
+			border:none;
+			cursor:pointer;
+			position:relative;
+			top:17px;
+			border-radius:100px;
+		}
+
+		.switch:before
+		{
+			content:'';
+			position:absolute;
+			left:returnswitchvalue(2.5px);
+			top:returnswitchvalue(2.5px);
+			width:returnswitchvalue(95px);
+			height:returnswitchvalue(45px);
+			z-index:1;
+			background:#fff;
+			border-radius:95px;
+		}
+
+		.switch:after
+		{
+			content:'';
+			width:returnswitchvalue(44px);
+			height:returnswitchvalue(44px);
+			border-radius:86px;
+			z-index:2;
+			background:#fff;
+			position:absolute;
+			transition-duration:500ms;
+			top:returnswitchvalue(3px);
+			left:returnswitchvalue(3px);
+			box-shadow:0 2px 5px #999999;
+		}
+
+		.switchOn, .switchOn:before
+		{
+			background:#46D964 !important;
+		}
+
+		.switchOn:after
+		{
+			left:returnswitchvalue(56.5px);
+		}
+	}
+}

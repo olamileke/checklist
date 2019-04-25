@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Checklist</title>
+
+		<link rel="apple-touch-icon" sizes="57x57" href="http://{{server}}/Images/Favicons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="http://{{server}}/Images/Favicons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="http://{{server}}/Images/Favicons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="http://{{server}}/Images/Favicons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="http://{{server}}/Images/Favicons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="http://{{server}}/Images/Favicons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="http://{{server}}/Images/Favicons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="http://{{server}}/Images/Favicons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="http://{{server}}/Images/Favicons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="http://{{server}}/Images/Favicons//android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="http://{{server}}/Images/Favicons//favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="http://{{server}}/Images/Favicons//favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="http://{{server}}/Images/Favicons//favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<link href="https://fonts.googleapis.com/css?family=Krub|Open+Sans+Condensed:300" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Underdog" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="http://{{server}}/css/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">		
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="http://{{server}}/css/Home/loggedindex.css">
+
+		{% block css %} 
+
+			<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+		 {% endblock %}
+	</head>
+	<body>
+
+		{% if activate %}
+			<div class='msgcontainer'>
+				
+				<div class='first-cont'>
+					<span></span>
+
+					<div>Hello {{user.lname}} and welcome once more to Checklist. Take a tour of our features and familiarize
+					yourself with them. Set goals and make them time-bound by setting expiry dates. We here at Checklist believe that each and every one of our users are diverse with various preferences. In line with these beliefs, you can customize your goal setting experience. Before you get started however, we would recommend that you set up your profile <a href="http://{{server}}/profile">here</a>. <p>Happy Goal Setting!</p></div>
+				</div>
+
+			</div>
+
+		{% endif %}
+
+		<header>
+
+			<div>
+				<span></span>
+
+				<h1><a href="http://{{server}}">Checklist</a></h1>
+
+			</div>
+
+
+			{% if day == 'mon' and hour == 08 %}
+				{% if user.is_admin %}
+
+				<button>Send Weekly Roundup</button>
+
+
+				<div class='otherdetails'>
+				
+					<div style='background:url(http://{{server}}/{{user.image}}); background-size:cover;' class='prof_img'>
+							
+					</div>
+
+
+				</div>
+				
+				{% else %}
+
+				<div class='otherdetails'>
+				
+					<div style='background:url(http://{{server}}/{{user.image}}); background-size:cover;' class='prof_img'>
+							
+					</div>
+
+				</div>
+
+				{% endif %}
+
+			{% else %}
+
+				<div class='otherdetails'>
+				
+					<div style='background:url(http://{{server}}/{{user.image}}); background-size:cover;' class='prof_img'>
+							
+					</div>
+
+				</div>
+
+
+			{% endif %}
+
+		</header>
+
+		<div id='body'>
+
+			<div class='mini_cont'>
+				<div class='loader_cont'>
+					<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+				</div>
+			</div>
+
+			<div id='sidebar'>				
+				<ul>
+					<li><a href="http://{{server}}"><i class='fas fa-home'></i> Home</a><p></p></li>
+					<li><a href="http://{{server}}/project/new"><i class='fas fa-plus'></i> New Project</a><p></p></li>
+					<li><a href=#><i class='fas fa-chart-line'></i> Track Productivity</a><p></p></li>
+					<li><a href="http://{{server}}/settings"><i class='fas fa-cog'></i> Settings</a><p></p></li>
+					<li><a href="http://{{server}}/profile"><i class='fas fa-user'></i> Profile</a><p></p></li>
+					<li><a href="http://{{server}}/logout"><i class='fa fa-sign-out-alt'></i> Logout</a><p></p></li>
+				</ul>
+			</div>
+
+			<div id='mainBody'>
+				{% block body %}
+
+					<div class='taskscontainer'>
+
+						{% if user.projects > 0 %}
+
+							{% for project in projects %}
+
+								<a href="http://{{server}}/project/{{project.id}}/{{project.url}}">
+									<div class='task'>
+										<span hidden>{{project.id}}</span>
+										<div class='taskimg' style='background:url(http://{{server}}/{{project.image}}); background-size:cover'></div>
+										<p class='name'>{{project.name}}</p>
+										<div class='cont'>
+
+											{% if user.settings.values_in_percentage %}
+												<p class='over'>{{project.percent}}</p>
+											{% else %}
+												<p class='over'>{{project.numcompletedtasks}}/{{project.numtasks}}</p>
+											{% endif %}
+											
+											{% if project.is_completed %}
+												<p class='complete'>Completed</p>
+											{% elseif project.is_expired %}
+												<p class='expired'>Expired</p>
+											{% else %}
+												<p class='timer'></p>
+											{% endif %}
+										</div>
+										<div class='totalpercent'></div>
+										<div class='percent'></div>
+									</div>
+								</a>
+							{% endfor %}
+
+						{% else %}
+
+							<div class='empty_notif'>
+								<i class='em-svg em-anguished'></i>
+								<p>You do not have any Projects yet</p>
+							</div>
+
+						{% endif %}
+					</div>
+				{% endblock %}
+
+				{%if user.tprojects > user.projects %}
+					<button class='more'>Load More</button>
+				{% else %}					
+					<button class='more' hidden>Load More</button>
+				{% endif %}
+				
+				<div class='loader'>
+					<div hidden></div>
+					<div hidden></div>
+					<div hidden></div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id='before_notif' hidden></div>
+		<div id='notif'>
+			<i class='fas fa-bell'></i>
+		</div>
+
+
+
+		<script type="text/javascript" src='http://{{server}}/js/jquery-3.2.1.min.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/Home/loggedin.js'></script>		
+		<script type="text/javascript" src='http://{{server}}/js/Home/timer.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/Home/home.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/Include/notif.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/Include/notif.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/getRequiredParameters.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/Home/sendremindermail.js'></script>
+		<script type="text/javascript" src='http://{{server}}/js/Home/weeklyroundup.js'></script>
+		{% block js%}
+
+		{% endblock%}
+	</body>
+</html>

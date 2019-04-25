@@ -1,0 +1,76 @@
+{% extends 'Home/loggedin.html' %}
+
+{% block css %}
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://{{server}}/css/Project/view.css">
+	<link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+{% endblock %}
+
+
+{% block body %}
+	<div class='info'>
+		<p class='name'>{{project.name}}</p>
+		<p class='id' hidden>{{project.id}}</p>
+
+		{% if project.is_completed %}
+			<p class="status">Completed!</p>
+		{% elseif project.is_expired %}
+			<p class="expired">Expired</p>
+		{% else %}
+			<p class='timer'></p>
+			<button class='complete'><i class='fa fa-check'></i> Mark as Completed</button>			
+		{% endif %}
+	</div>
+
+
+	{% if project.is_completed or project.is_expired %}
+		<div class='picinfo'>
+	{% else %}
+		<div class='picinfo' style='margin-top:32px'>
+	{% endif %}
+		<div class='picturediv' style='background:url(http://{{server}}/{{project.image}}); background-size:cover; background-position:0% 30%'>
+			
+		</div>
+
+		{% if user.settings.values_in_percentage %}
+			<p>
+				{{project.percent}}
+			</p>
+		{% else %}
+			<p>
+				{{project.numcompletedtasks}}/{{project.numtasks}}
+			</p>
+		{% endif %}
+
+	</div>
+
+	<div class='taskcontainer'>
+		{% for task in project.tasks %}
+
+			<div class='task'>
+				<span class='task_id' hidden>{{task.id}}</span>
+				{% if task.is_done %}
+					<div class='checkbox'></div>
+					<div class='l_check visible'></div>
+					<div class='s_check visible' ></div>
+				{% else %}
+					<div class='checkbox'></div>
+					<div class='l_check' hidden></div>
+					<div class='s_check' hidden></div>
+				{% endif %}
+
+				<p>{{task.name}}</p>
+			</div>
+		{% endfor %}
+	</div>
+
+	<button class='update' hidden>Update</button>
+
+{% endblock %}
+
+
+{% block js %}
+	<script type="text/javascript" src='http://{{server}}/js/Project/view.js'></script>
+{% endblock %}

@@ -1,0 +1,171 @@
+
+
+@mixin flexmixin()
+{
+	display: -webkit-box;  
+ 	display: -ms-flexbox; 
+ 	display: -moz-box;  
+  	display: -webkit-flex; 
+	display:flex;
+}
+
+
+#mainBody
+{
+	padding:0 0 10px 0;
+	margin-bottom:15px;
+
+	.info
+	{		
+		margin:-10px 0 0 40px;
+		@include flexmixin();
+		width:calc(100% - 40px);
+
+		.name
+		{
+			font-family: 'Noto Sans TC', sans-serif;
+			font-size:1.6em;
+		}
+
+		.timer
+		{
+			position:absolute;
+			top:31px;
+			left:40px;
+			font-size:1.6em;
+			margin:20px 0;
+			color:darken(#fff, 60%);
+			font-family: 'Thasadith', sans-serif;
+		}
+
+		button.complete
+		{
+			position:absolute;
+			margin-top:3%;
+			left:74%;
+			background:lighten(#69E08E,2%);
+			border:1px solid lighten(#669966,5%);
+			height:44px;
+			border-radius:5px;
+			color:#fff;
+			padding:0px 25px;
+			cursor:pointer;
+		}
+
+		p.status
+		{
+			position:absolute;
+			margin-top:3%;
+			left:74%;
+			font-family:"Tahoma",'sans-serif';
+			font-size:1.6em;
+			color:lighten(#69E08E,2%);
+		}
+
+		p.expired
+		{
+			@extend p.status;
+			color:red;
+			font-family: 'Raleway', sans-serif;
+		}
+	}
+
+	.picinfo
+	{
+		@include flexmixin();
+		margin:10px 0 0 0;
+
+		.picturediv
+		{
+			width:63%;
+			height:250px;
+			margin:-15px 7% 0 40px;
+			background-position:0% 20%;
+		}
+
+		p
+		{
+			position:relative;
+			top:-70px;
+			font-size:7em;
+			font-family:Tahoma, "sans-serif";
+			color:rgba(0,0,0,0.7);
+		}
+	}
+
+	.taskcontainer
+	{
+		position:relative;
+		top:-110px;
+		margin:0px 0 0 40px;
+		.task
+		{
+			@include flexmixin();
+			width:100%;
+			margin:15px 0 0 0;
+			font-family: 'Nanum Gothic', sans-serif;
+			font-size:1.2em;
+
+			.checkbox
+			{
+				width:40px;
+				height:40px;
+				border:2px solid #C3734D;
+				box-sizing:border-box;
+				margin:0 10px 0 0;				
+				cursor:pointer;
+			}
+
+			.l_check
+			{
+				position:relative;
+				top:-4px;
+				left:-1.7%;
+				transform:rotate(45deg);
+				width:3px;
+				height:40px;
+				background:#C3734D;
+
+				.visible
+				{
+					display:block;
+				}
+			}
+
+			.s_check
+			{
+				@extend .l_check;
+				top:14px;
+				left:-4%;
+				height:20px;
+				transform:rotate(-45deg);
+			}
+
+			p
+			{
+				margin-top:10px;
+				margin-left:14px;
+			}
+		}
+	}
+
+	button.update
+	{
+		position:relative;
+		top:-9%;
+		left:58%;
+		outline:none;
+		border:none;
+		padding:10px 15px;		
+		background:#50C878;
+		border:1px solid #669966;
+		color:#fff;
+		border-radius:5px;
+		cursor:pointer;
+
+		&.active
+		{
+			
+		}
+	}
+}
